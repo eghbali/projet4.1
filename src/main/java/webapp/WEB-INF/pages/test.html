@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form name="newcustomer" class="myForm" action="ManageNewCustomer" METHOD="post" onsubmit="return CheckNationalCode();">
+    <fieldset>
+        <legend> ***new customer***</legend>
+        First name:<br> <input type="text" name="first_name" required/>
+        <br><br>
+        Last name: <br><input type="text" name="last_name" required/>
+        <br><br>
+        Father name:<br> <input type="text" name="father_name" required/>
+        <br><br>
+        National code:<br> <input type="text" name="national_code" required/>
+        <br><br>
+        Birth date: <br><input type="date" name="birth_date" min="2000-01-02" required/><br>
+        <br>
+        <br>
+        <input type="submit" value="Submit" class="myButton">
+
+
+    </fieldset>
+
+</form>
+</body>
+</html>

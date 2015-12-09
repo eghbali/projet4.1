@@ -1,0 +1,85 @@
+﻿body {
+
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    border: 3px solid #229aec;
+
+}
+
+legend {
+    color: rgba(8, 42, 129, 0.77);
+}
+
+fieldset {
+    border: 1px solid #25d1ec;
+    color: rgba(51, 21, 150, 0.77);
+}
+
+table, td {
+    background-color: #ebfafc;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    border: 3px solid #dae6e3;
+    display: inline-block;
+    cursor: pointer;
+    color: #4d54fc;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-shadow: -2px 0px 7px #0010c4;
+    text-align: center;
+}
+
+.myForm, .myButton {
+    background-color: #b9e7ed;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    border: 3px solid #b8aae6;
+    display: inline-block;
+    cursor: pointer;
+    color: #fcfcfc;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-shadow: -2px 0px 7px #0010c4;
+}
+
+.myAlertForm, .myForm:hover {
+    background-color: #8d9ce6;
+}
+
+.myAlertForm, .myButton, .myForm:active {
+    position: relative;
+    top: 1px;
+}
+
+.myButton:hover {
+    background-color: #69e0ec;
+}
+
+.myAlertForm {
+
+    background-color: #eaf6f3;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    border: 2px solid #ba80c4;
+    display: inline-block;
+    cursor: pointer;
+    color: #fcfcfc;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-shadow: -2px 0px 7px rgba(23, 38, 138, 0.96);
+}

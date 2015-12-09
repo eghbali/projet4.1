@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="projet4.1:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/projet4_1_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="projet4.1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.5.2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.5.2" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.14" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:3.5.1-Final" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.6" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.1" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: javax.transaction:jta:1.1" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.37" />
+          <element id="library" level="project" name="Maven: javassist:javassist:3.12.1.GA" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/webapp/WEB-INF/web.xml" />
+      </element>
+      <element id="javaee-facet-resources" facet="projet4.1/web/Web" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/java/webapp/WEB-INF/pages" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/webapp/index.jsp" />
+    </root>
+  </artifact>
+</component>
