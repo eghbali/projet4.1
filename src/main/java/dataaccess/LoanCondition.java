@@ -77,45 +77,8 @@ public class LoanCondition {
         this.maxDuration = maxDuration;
     }
 
-    public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (!this.getClass().equals(obj.getClass())) return false;
-        LoanCondition obj2 = (LoanCondition)obj;
-        if((this.id == obj2.getId()) && (this.name.equals(obj2.getName()))&& (this.minAmount==(obj2.getMaxAmount()))&& (this.minAmount==(obj2.getMinAmount()))
-                && (this.minDuration==(obj2.getMinDuration()))&& (this.maxDuration==(obj2.getMaxDuration())))
-        {
-            return true;
-        }
-        return false;
-    }
-    public int hashCode() {
-        int tmp = 0;
-        tmp = ( id + name ).hashCode();
-        return tmp;
-    }
-
-    public static void main(String[] args) {
-    LoanType lt=new LoanType("loanmame",7);
-        HashSet set1 = new HashSet();
-        set1.add(new LoanCondition("conditionname",1,2,12,13));
-        set1.add(new LoanCondition("conditionname2",21,22,22,23)) ;
-        set1.add(new LoanCondition("conditionname3",31,32,32,33)) ;
-        lt.setConditions(set1);
 
 
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
-        Session session = factory.openSession();
-        try {
-            Transaction tx = session.beginTransaction();
-            session.save(lt);
-            tx.commit();
-        }
-    finally {
-            session.close();
-        }
-//        System.out.println("-------->"+lc.getId());
-        System.out.println("end");
-    }
     }
 
 

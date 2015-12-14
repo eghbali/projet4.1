@@ -15,7 +15,7 @@ public class FirstPageManagerServlet extends HttpServlet {
             resp.sendRedirect("new-customer-form.jsp");
         } else if (req.getParameter("type").equals("loan type")) {
             resp.sendRedirect("new-loantype-form.jsp");
-        } else if (req.getParameter("type").equals("loan profile")) {
+        } else if (req.getParameter("type").equals("Loan profile")) {
             resp.sendRedirect("new-loanprofile-form.jsp");
         }
     }

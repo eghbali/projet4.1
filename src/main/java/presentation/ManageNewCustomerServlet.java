@@ -18,9 +18,9 @@ public class ManageNewCustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         NewCustomer newCustomer = new NewCustomer(request.getParameter("national_code"), request.getParameter("first_name"), request.getParameter("last_name"),
                 request.getParameter("father_name"), request.getParameter("birth_date"));
-        String massage = manageNewCustomer(newCustomer);
-        System.out.println(massage);
-        request.setAttribute("message", massage);
+        String message = manageNewCustomer(newCustomer);
+        System.out.println(message);
+        request.setAttribute("message", message);
         request.getRequestDispatcher("alert.jsp").forward(request, response);
     }
 }

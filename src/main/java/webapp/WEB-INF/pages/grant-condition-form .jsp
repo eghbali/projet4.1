@@ -15,7 +15,7 @@
     <fieldset>
         <legend> *** Grant Conditions ***</legend>
         <%= "<input type=\"hidden\" name=\"Loan Name\" value=\" " + request.getParameter("Loan Name") + "\" required/>" %>
-        <%= "<input type=\"hidden\" name=\"Loan Name\" value=\" " + request.getParameter("Interest Rate") + "\" required/>" %>
+        <%= "<input type=\"hidden\" name=\"Interest Rate\" value=\" " + request.getParameter("Interest Rate") + "\" required/>" %>
         <br>
         Name: <br><input type="text" name="Condition Name" required/>
         <br><br>
@@ -45,6 +45,7 @@
                 || document.forms["conditions"]["max Amount"].value == "") {
             alert("Error: empty fields");
         }
+
         else {
              condition+= document.forms["conditions"]["Condition Name"].value +"*"+ document.forms["conditions"]["min Duration"].value +"*"+
                      document.forms["conditions"]["max Duration"].value +"*"+ document.forms["conditions"]["min Amount"].value +"*"+
@@ -64,11 +65,9 @@
 
             document.getElementById('table').innerHTML = "<table>" + conditions +
                     "</table>" + "<br> <input type=\"button\" value=\"Final Submit\" class=\"myButton\"  onclick='submitFunction()'>";
-
         }
 
     }
-
     function submitFunction() {
         document.getElementById('output').innerHTML ="<input type=\"hidden\" name=\"output\" value=\""+condition+"\"/>";
         document.conditions.submit();
