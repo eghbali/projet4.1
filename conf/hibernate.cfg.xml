@@ -14,6 +14,8 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <mapping resource="Customer.hbm.xml"/>
+        <mapping resource="LoanType.hbm.xml"/>
+        <mapping resource="LoanCondition.hbm.xml"/>
     </session-factory>
 
 </hibernate-configuration>

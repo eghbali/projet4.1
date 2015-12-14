@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dataaccess.LoanType" table="loan_type">
+        <meta attribute="class-description">This class contains the LoanType detail.</meta>
+        <id name="id" column="id" type="integer">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+        <property name="interestRate" column="interest_rate" type="integer"/>
+        <set name="conditions" cascade="all">
+            <key column="loan_id" />
+            <one-to-many class="dataaccess.LoanCondition"/>
+        </set>
+    </class>
+</hibernate-mapping>

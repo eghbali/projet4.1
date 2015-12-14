@@ -1,6 +1,12 @@
 package dataaccess;
 
-import org.hibernate.mapping.Set;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import java.util.Set;
+
 
 /**
  * Created by DotinSchool2 on 12/9/2015.
@@ -10,6 +16,7 @@ public class LoanType {
     int interestRate;
     private Set conditions;
     private int id;
+
     public LoanType() {
     }
     public LoanType(String name, int interestRate) {
@@ -37,12 +44,30 @@ public class LoanType {
         return conditions;
     }
 
-    public void setConditions(Set conditions) {
-        this.conditions = conditions;
-    }
 
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setConditions(Set conditions) {
+        this.conditions = conditions;
+    }
+
+    public static void main(String[] args) {
+        LoanType loanType=new LoanType("loanname10",15);
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+        Session session = factory.openSession();
+        try {
+            Transaction tx = session.beginTransaction();
+            session.save(loanType);
+            tx.commit();
+        } finally {
+            session.close();
+        }
+        System.out.println("-------->"+loanType.getId());
+    }
 }
