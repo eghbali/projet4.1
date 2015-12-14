@@ -6,53 +6,71 @@
     <link rel="stylesheet" type="text/css" href="cssfile/style.css" media="screen"/>
     <script language="JavaScript"></script>
 </head>
-<body >
-<form name="conditions" class="myForm" action="" method="post">
-
+<body>
+<form name="conditions" class="myForm" action="LoanTypeManagerServlet" method="post">
+    <%= "  Loan Name: " + request.getParameter("Loan Name") +
+            "                  Interest Rate:" +
+            request.getParameter("Interest Rate")%>
+    <br><br>
     <fieldset>
-        <legend> ***  Grant Conditions  ***</legend>
-            <%= "<input type=\"hidden\" name=\"Loan Name\" value=\" "+request.getParameter("Loan Name") +"\" required/>" %>
-            <%= "<input type=\"hidden\" name=\"Loan Name\" value=\" "+request.getParameter("Interest Rate") +"\" required/>" %>
-        <form name="condition" class="myForm" action="" onsubmit="showConditions();">
-                <br>
-                Name: <br><input type="text" name="Condition Name" required/>
-                <br><br>
-                min Dration : <br> <input type="text" name="min Dration" required/>
-                <br><br>
-                max Duration : <br><input type="text" name="max Duration" required/>
-                <br><br>
-                min Amount: <br><input type="text" name="min Amount" required/>
-                <br><br>
-                max Amount : <br><input type="text" name="max Amount" required/>
-                <br><br>
-                <input type="submit" value="add more" class="myButton">
-        </form>
-        <input type="submit" value="Final Submit" class="myButton">
-            </fieldset>
-        </form>
-<p id="demo"></p>
-
+        <legend> *** Grant Conditions ***</legend>
+        <%= "<input type=\"hidden\" name=\"Loan Name\" value=\" " + request.getParameter("Loan Name") + "\" required/>" %>
+        <%= "<input type=\"hidden\" name=\"Loan Name\" value=\" " + request.getParameter("Interest Rate") + "\" required/>" %>
+        <br>
+        Name: <br><input type="text" name="Condition Name" required/>
+        <br><br>
+        min Duration : <br> <input type="text" name="min Duration" required/>
+        <br><br>
+        max Duration : <br><input type="text" name="max Duration" required/>
+        <br><br>
+        min Amount: <br><input type="text" name="min Amount" required/>
+        <br><br>
+        max Amount : <br><input type="text" name="max Amount" required/>
+        <br><br>
+        <input type="button" value="add " class="myButton" onclick="showConditions()">
+    </fieldset>
+    <p id="output"></p>
+</form>
+<p id="table"></p>
 </body>
 </html>
 <script>
-    grantConditions=[];
-function showConditions(){
-    alert("hello")
-    /*
-    conditionName = document.forms["condition"]["Condition Name"].value;
-    conditionMinDuration = document.forms["condition"]["min Dration"].value;
-    conditionMaxDration = document.forms["condition"]["max Duration"].value;
-    conditionMinAmount = document.forms["condition"]["min Amount"].value;
-    conditionMaxAmount = document.forms["condition"]["max Amount"].value;
-*/
-    var condition={name:document.forms["condition"]["Condition Name"].value ,
-        minDration:document.forms["condition"]["min Dration"].value,
-        maxDration:document.forms["condition"]["max Duration"].value,
-        minAmount:document.forms["condition"]["min Amount"].value,
-        maxAmount:document.forms["condition"]["max Amount"].value };
-    grantConditions.push(condition);
-    alert(condition);
+    var condition="";
+    var conditions = "<tr> <th>Condition Name </th><th> min Duration</th><th> max Duration</th><th>min Amount </th><th> max Amount</th></tr>";
+    grantConditions = [];
+    function showConditions() {
 
-}
- //   document.getElementById("demo").innerHTML = " <input type=\"button\" value=\"add more\" class=\"myButton\">";
+        if (document.forms["conditions"]["Condition Name"].value == "" || document.forms["conditions"]["min Duration"].value == ""
+                || document.forms["conditions"]["max Duration"].value == "" || document.forms["conditions"]["min Amount"].value == ""
+                || document.forms["conditions"]["max Amount"].value == "") {
+            alert("Error: empty fields");
+        }
+        else {
+             condition+= document.forms["conditions"]["Condition Name"].value +"*"+ document.forms["conditions"]["min Duration"].value +"*"+
+                     document.forms["conditions"]["max Duration"].value +"*"+ document.forms["conditions"]["min Amount"].value +"*"+
+                     document.forms["conditions"]["max Amount"].value+"+" ;
+            var newCondition = "";
+            newCondition += "<tr>" + "<td>" + document.forms["conditions"]["Condition Name"].value + "</td>";
+            newCondition += "<td>" + document.forms["conditions"]["min Duration"].value + "</td>";
+            newCondition += "<td>" + document.forms["conditions"]["max Duration"].value + "</td>";
+            newCondition += "<td>" + document.forms["conditions"]["min Amount"].value + "</td>";
+            newCondition += "<td>" + document.forms["conditions"]["max Amount"].value + "<tr>" + "</td>";
+            conditions += newCondition;
+            document.forms["conditions"]["Condition Name"].value = "";
+            document.forms["conditions"]["min Duration"].value = "";
+            document.forms["conditions"]["max Duration"].value = "";
+            document.forms["conditions"]["min Amount"].value = "";
+            document.forms["conditions"]["max Amount"].value = "";
+
+            document.getElementById('table').innerHTML = "<table>" + conditions +
+                    "</table>" + "<br> <input type=\"button\" value=\"Final Submit\" class=\"myButton\"  onclick='submitFunction()'>";
+
+        }
+
+    }
+
+    function submitFunction() {
+        document.getElementById('output').innerHTML ="<input type=\"hidden\" name=\"output\" value=\""+condition+"\"/>";
+        document.conditions.submit();
+    }
 </script>

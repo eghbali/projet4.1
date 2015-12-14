@@ -5,11 +5,10 @@
          version="3.1">
 
 
-
-  <servlet>
+    <servlet>
         <servlet-name>FirstPageManagerServlet</servlet-name>
         <servlet-class>presentation.FirstPageManagerServlet</servlet-class>
-  </servlet>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FirstPageManagerServlet</servlet-name>
         <url-pattern>/FirstPageManager</url-pattern>
@@ -23,4 +22,14 @@
         <servlet-name>ManageNewCustomerServlet</servlet-name>
         <url-pattern>/ManageNewCustomer</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LoanTypeManagerServlet</servlet-name>
+        <servlet-class>presentation.LoanTypeManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoanTypeManagerServlet</servlet-name>
+        <url-pattern>/LoanTypeManagerServlet</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
