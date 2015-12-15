@@ -15,10 +15,12 @@ public class LoanType {
     private String name;
     int interestRate;
     private Set conditions;
+    private Set profiles;
     private int id;
 
     public LoanType() {
     }
+
     public LoanType(String name, int interestRate) {
         this.name = name;
         this.interestRate = interestRate;
@@ -57,8 +59,16 @@ public class LoanType {
         this.conditions = conditions;
     }
 
+    public Set getProfiles() {
+        return profiles;
+    }
+
+    public void setProfiles(Set profiles) {
+        this.profiles = profiles;
+    }
+
     public static void main(String[] args) {
-        LoanType loanType=new LoanType("loanname10",15);
+        LoanType loanType = new LoanType("loanname15", 15);
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         try {
@@ -68,6 +78,6 @@ public class LoanType {
         } finally {
             session.close();
         }
-        System.out.println("-------->"+loanType.getId());
+        System.out.println("-------->" + loanType.getId());
     }
 }

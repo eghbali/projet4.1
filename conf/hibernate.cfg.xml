@@ -16,6 +16,7 @@
         <mapping resource="Customer.hbm.xml"/>
         <mapping resource="LoanType.hbm.xml"/>
         <mapping resource="LoanCondition.hbm.xml"/>
+        <mapping resource="LoanProfile.hbn.xml"/>
     </session-factory>
 
 </hibernate-configuration>

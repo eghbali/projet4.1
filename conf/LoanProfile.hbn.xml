@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dataaccess.LoanProfile" table="loan_profile">
+        <id name="id" column="id" type="java.lang.Integer"><generator class="native"/></id>
+        <property name="amount" column="amount" type="integer"/>
+        <property name="duration" column="duration" type="integer"/>
+        <property name="loanId" column="loan_id" type="integer"/>
+        <property name="customerId" column="customer_id" type="java.lang.Long"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,12 +1,15 @@
 package logic;
 
 import dataaccess.Customer;
-
+import org.apache.log4j.Logger;
 import static dataaccess.CustomerCRUD.addNewCustomerToDatabase;
 
 
 public class NewCustomerManager {
+  public   static Logger log = Logger.getLogger(NewCustomerManager.class);
+
     public static String manageNewCustomer(NewCustomer newCustomer) {
+
         String result = "";
         Customer customer = new Customer(newCustomer.getNationalCode(), newCustomer.getFirstName(),
                 newCustomer.getLastName(), newCustomer.getFather(), newCustomer.getBirthDate());
@@ -14,6 +17,7 @@ public class NewCustomerManager {
             if (FieldChecker.checkNationalCodeIsUnique(customer.getNationalCode())) {
                 addNewCustomer(customer);
                 result="new Customer added";
+                log.info("new Customer added");
             }
             else {
                 System.out.println("National Code is invalid");
@@ -29,4 +33,6 @@ public class NewCustomerManager {
     public static void addNewCustomer(Customer customer) {
         addNewCustomerToDatabase(customer);
     }
+
+
 }

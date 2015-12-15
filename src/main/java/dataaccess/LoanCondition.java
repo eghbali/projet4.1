@@ -1,12 +1,5 @@
 package dataaccess;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-
-import java.util.HashSet;
-
 /**
  * Created by DotinSchool2 on 12/9/2015.
  */
@@ -33,6 +26,7 @@ public class LoanCondition {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -78,7 +72,6 @@ public class LoanCondition {
     }
 
 
-
-    }
+}
 
 

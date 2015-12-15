@@ -35,7 +35,7 @@
 </body>
 </html>
 <script>
-    var condition="";
+    var condition = "";
     var conditions = "<tr> <th>Condition Name </th><th> min Duration</th><th> max Duration</th><th>min Amount </th><th> max Amount</th></tr>";
     grantConditions = [];
     function showConditions() {
@@ -47,9 +47,9 @@
         }
 
         else {
-             condition+= document.forms["conditions"]["Condition Name"].value +"*"+ document.forms["conditions"]["min Duration"].value +"*"+
-                     document.forms["conditions"]["max Duration"].value +"*"+ document.forms["conditions"]["min Amount"].value +"*"+
-                     document.forms["conditions"]["max Amount"].value+"+" ;
+            condition += document.forms["conditions"]["Condition Name"].value + "*" + document.forms["conditions"]["min Duration"].value + "*" +
+                    document.forms["conditions"]["max Duration"].value + "*" + document.forms["conditions"]["min Amount"].value + "*" +
+                    document.forms["conditions"]["max Amount"].value + "+";
             var newCondition = "";
             newCondition += "<tr>" + "<td>" + document.forms["conditions"]["Condition Name"].value + "</td>";
             newCondition += "<td>" + document.forms["conditions"]["min Duration"].value + "</td>";
@@ -69,7 +69,7 @@
 
     }
     function submitFunction() {
-        document.getElementById('output').innerHTML ="<input type=\"hidden\" name=\"output\" value=\""+condition+"\"/>";
+        document.getElementById('output').innerHTML = "<input type=\"hidden\" name=\"output\" value=\"" + condition + "\"/>";
         document.conditions.submit();
     }
 </script>

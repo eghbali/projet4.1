@@ -20,6 +20,7 @@
           <element id="library" level="project" name="Maven: javassist:javassist:3.12.1.GA" />
         </element>
         <element id="file-copy" path="$PROJECT_DIR$/src/main/java/webapp/WEB-INF/web.xml" />
+        <element id="file-copy" path="$PROJECT_DIR$/properties/log4j.properties" />
       </element>
       <element id="javaee-facet-resources" facet="projet4.1/web/Web" />
       <element id="dir-copy" path="$PROJECT_DIR$/src/main/java/webapp/WEB-INF/pages" />

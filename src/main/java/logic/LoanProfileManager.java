@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import static dataaccess.CustomerCRUD.selectCustomer;
+import static dataaccess.LoanProfileCRUD.InsertLoanProfileToDatabase;
 import static dataaccess.LoanTypeCRUD.checkLoanConditions;
 import static dataaccess.LoanTypeCRUD.selectLoanTypeFromDatabase;
 
@@ -34,13 +35,14 @@ public class LoanProfileManager {
         return loanInformation;
     }
 
- public static   void ManageLoan(String customerId,String amount,String duration,String loanId){
-        int loanCondition=checkLoanConditions(amount,duration,loanId);
-        if(loanCondition!=-1){
-            makeLoanProfile(Long.parseLong(customerId),loanCondition,amount,duration);
+ public static  String ManageLoan(String customerId,String amount,String duration,String loanId){
+       boolean loanCondition=checkLoanConditions(amount,duration,loanId);
+        if(loanCondition){
+            InsertLoanProfileToDatabase(Long.parseLong(customerId), Integer.parseInt(loanId),Integer.parseInt(amount) ,Integer.parseInt(duration) );
+            return "Loan Profile Created";
         }
          else{
-
+            return "Error: invalid conditions";
         }
    }
 }

@@ -5,10 +5,10 @@ package dataaccess;
  */
 public class LoanProfile {
 
-    private long  customerId;
+    private long customerId;
     private int loanId;
-    private int  id;
-    private int  duration;
+    private int id;
+    private int duration;
     private int amount;
 
     public LoanProfile(long customerId, int loanId, int duration, int amount) {

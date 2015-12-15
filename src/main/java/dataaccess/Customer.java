@@ -1,6 +1,8 @@
 package dataaccess;
 
 
+import java.util.Set;
+
 public class Customer {
 
     private String firstName;
@@ -9,6 +11,7 @@ public class Customer {
     private String nationalCode;
     private String birthDate;
     private long id;
+    private Set profiles;
 
     public long getId() {
         return id;
@@ -73,4 +76,11 @@ public class Customer {
         this.id = id;
     }
 
+    public Set getProfiles() {
+        return profiles;
+    }
+
+    public void setProfiles(Set profiles) {
+        this.profiles = profiles;
+    }
 }

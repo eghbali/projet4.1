@@ -12,6 +12,10 @@
         <property name="lastName" column="last_name" type="string"/>
         <property name="father" column="father_name" type="string"/>
         <property name="birthDate" column="birth_date" type="string"/>
+        <set name="profiles" cascade="all">
+            <key column="customer_id" />
+            <one-to-many class="dataaccess.LoanProfile"/>
+        </set>
 
     </class>
 </hibernate-mapping>

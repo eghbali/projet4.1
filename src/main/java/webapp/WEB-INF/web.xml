@@ -30,6 +30,17 @@
         <servlet-name>LoanTypeManagerServlet</servlet-name>
         <url-pattern>/LoanTypeManagerServlet</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>LoanProfileManager</servlet-name>
+        <servlet-class>presentation.LoanProfileManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoanProfileManager</servlet-name>
+        <url-pattern>/LoanProfileManager</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>log4j-config-location</param-name>
+        <param-value>WEB-INF/log4j.properties</param-value>
+    </context-param>
 
 </web-app>
