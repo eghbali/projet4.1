@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by DotinSchool2 on 12/15/2015.
- */
 public class LoanProfileLogic {
     public static Logger log = Logger.getLogger(LoanProfileLogic.class);
 
@@ -27,12 +24,7 @@ public class LoanProfileLogic {
     }
 
     public static List<LoanType>  selectAllLoanTypes() {
-        List<LoanType> loanTypes = LoanTypeCRUD.loadAllLoanTypes();
-//        ArrayList<String> loanInformation = new ArrayList<String>();
-//        for (LoanType loanType : loanTypes) {
-//            loanInformation.add(loanType.getName() + "+" + loanType.getId() + "+" + loanType.getInterestRate());
-//        }
-        return loanTypes;
+        return LoanTypeCRUD.loadAllLoanTypes();
     }
 
     public static String insertLoanToDatabase(LoanProfile loanProfile) {

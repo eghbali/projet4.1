@@ -22,8 +22,6 @@ public class LoanTypeManagerServlet extends HttpServlet {
             req.setAttribute("message", "new loan Type added");
             req.getRequestDispatcher("alert.jsp").forward(req, resp);
         }
-        Writer out = resp.getWriter();
-        out.write("loan type manager servlet----------------");
     }
 
 }

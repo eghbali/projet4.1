@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>ManageNewCustomerServlet</servlet-name>
-        <servlet-class>presentation.ManageNewCustomerServlet</servlet-class>
+        <servlet-class>presentation.CustomerManagerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ManageNewCustomerServlet</servlet-name>

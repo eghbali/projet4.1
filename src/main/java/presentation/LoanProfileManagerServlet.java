@@ -17,14 +17,14 @@ import java.util.List;
 public class LoanProfileManagerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String customerId = req.getParameter("customer id");
-        String name = LoanProfileLogic.searchCustomer(customerId);
-        if (name.equals("")) {
+        String customerName = LoanProfileLogic.searchCustomer(customerId);
+        if (customerName.equals("")) {
             req.setAttribute("message", "no customer found");
             req.getRequestDispatcher("alert.jsp").forward(req, resp);
         } else {
             List<LoanType> loanTypes = LoanProfileLogic.selectAllLoanTypes();
-            req.setAttribute("firstname", name.split("\\+")[0]);
-            req.setAttribute("lastname", name.split("\\+")[1]);
+            req.setAttribute("firstname", customerName.split("\\+")[0]);
+            req.setAttribute("lastname", customerName.split("\\+")[1]);
             req.setAttribute("LoanList", loanTypes);
             req.getRequestDispatcher("new-loanprofile-form.jsp").forward(req, resp);
         }

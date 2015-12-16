@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static logic.NewCustomerlogic.manageNewCustomer;
 
-public class ManageNewCustomerServlet extends HttpServlet {
+public class CustomerManagerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Customer customer = new Customer(request.getParameter("national_code"), request.getParameter("first_name"), request.getParameter("last_name"),
                 request.getParameter("father_name"), request.getParameter("birth_date"));

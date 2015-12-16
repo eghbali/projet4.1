@@ -62,16 +62,5 @@ public class LoanType {
         this.profiles = profiles;
     }
 
-    public static void main(String[] args) {
-        LoanType loanType = new LoanType("loanname15", 15);
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
-        Session session = factory.openSession();
-        try {
-            Transaction tx = session.beginTransaction();
-            session.save(loanType);
-            tx.commit();
-        } finally {
-            session.close();
-        }
-    }
+
 }

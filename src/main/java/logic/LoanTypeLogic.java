@@ -40,7 +40,7 @@ public class LoanTypeLogic {
             if (loanType != null) {
                 Set<LoanCondition> conditions = loanType.getConditions();
                 for (LoanCondition condition : conditions) {
-                    if (((condition.getMinAmount() <= amount) && (condition.getMaxAmount() >= amount))
+                    if ((condition.getMinAmount() <= amount) && (condition.getMaxAmount() >= amount)
                             && (condition.getMinDuration() <= duration) && (condition.getMaxDuration() >= duration)) {
                         return true;
                     }
