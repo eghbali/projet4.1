@@ -1,6 +1,6 @@
 package logic;
 
-import dataaccess.Customer;
+import dataaccess.entity.Customer;
 
 import static dataaccess.CustomerCRUD.checkNationalCodeIsValied;
 

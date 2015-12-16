@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="dataaccess.LoanCondition" table="loan_condition">
+    <class name="dataaccess.entity.LoanCondition" table="loan_condition">
         <meta attribute="class-description">This class contains the LoanCondition detail.</meta>
         <id name="id" column="id" type="java.lang.Integer"><generator class="native"/></id>
         <property name="name" column="name" type="string"/>

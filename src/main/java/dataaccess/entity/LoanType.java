@@ -1,4 +1,4 @@
-package dataaccess;
+package dataaccess.entity;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,10 +7,6 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.Set;
 
-
-/**
- * Created by DotinSchool2 on 12/9/2015.
- */
 public class LoanType {
     private String name;
     int interestRate;
@@ -46,7 +42,6 @@ public class LoanType {
         return conditions;
     }
 
-
     public int getId() {
         return id;
     }
@@ -78,6 +73,5 @@ public class LoanType {
         } finally {
             session.close();
         }
-        System.out.println("-------->" + loanType.getId());
     }
 }

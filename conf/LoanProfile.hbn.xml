@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="dataaccess.LoanProfile" table="loan_profile">
+    <class name="dataaccess.entity.LoanProfile" table="loan_profile">
         <id name="id" column="id" type="java.lang.Integer"><generator class="native"/></id>
         <property name="amount" column="amount" type="integer"/>
         <property name="duration" column="duration" type="integer"/>

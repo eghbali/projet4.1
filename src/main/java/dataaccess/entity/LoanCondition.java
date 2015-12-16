@@ -1,4 +1,4 @@
-package dataaccess;
+package dataaccess.entity;
 
 /**
  * Created by DotinSchool2 on 12/9/2015.

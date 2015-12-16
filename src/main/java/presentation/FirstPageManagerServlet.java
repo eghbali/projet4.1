@@ -8,9 +8,7 @@ import java.io.IOException;
 
 
 public class FirstPageManagerServlet extends HttpServlet {
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //System.out.println(req.getParameter("customer")+"hello!");
         if (req.getParameter("type").equals("customer")) {
             resp.sendRedirect("new-customer-form.jsp");
         } else if (req.getParameter("type").equals("loan type")) {

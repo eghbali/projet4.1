@@ -1,4 +1,4 @@
-package dataaccess;
+package dataaccess.entity;
 
 
 import java.util.Set;

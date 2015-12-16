@@ -1,5 +1,5 @@
-<%@ page import="static logic.LoanProfileManager.selectLoanType" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="dataaccess.entity.LoanType" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -19,20 +19,33 @@
         <br>
     </fieldset>
 </form>
+
 <%
-    ArrayList<String> loantype = (ArrayList<String>) request.getAttribute("LoanList");
+    List<LoanType> loantype = (List<LoanType>) request.getAttribute("LoanList");
     if (loantype != null) {
-        out.print("<p><form  action=\"LoanProfileManager\" method=\"post\" class=\"myAlertForm\">");
-        out.print("<input type=\"hidden\" name=\"customer id\" value=\""+request.getParameter("customer id")+"\">");
-        out.print(request.getAttribute("message"));
-        out.print("<br>LoanType:<br><select name=\"options\">");
-        for (int i = 0; i < loantype.size(); i++) {
-            out.print("<option value=\"" + loantype.get(i).split("\\+")[1] + "\">" + loantype.get(i).split("\\+")[0] + "</option>");
-        }
-        out.print("</select><br><br>Amount:<input type=\"text\" name=\"Amount\" >");
-        out.print("<br><br>Duration:<input type=\"text\" name=\"Duration\">");
-        out.print("<br><br><input type=\"submit\" value=\"Submit\" class=\"myAlertForm\">");
-        out.print("</p></form>");
+%>
+<p>
+<form action="LoanProfileManager" method="post" class="myAlertForm">
+    <input type="hidden" name="customer id" value="<%=request.getParameter("customer id")%>">
+    <br> first name: <input type="text" name="first name" value="<%=request.getAttribute("firstname")%>" readonly><br>";
+    <br>last name: <input type="text" name="last name" value=" <%=request.getAttribute("lastname")%> " readonly><br>";
+    <br>LoanType:
+    <br>
+    <select name="options">
+        <%
+            for (int i = 0; i < loantype.size(); i++) {
+        %>
+        <option value="<%=loantype.get(i).getId()%>"><%=loantype.get(i).getName()%>
+        </option>
+        <%
+            }
+        %>
+    </select>
+    <br><br>Amount:<input type="text" name="Amount">
+    <br><br>Duration:<input type="text" name="Duration" required>
+    <br><br><input type="submit" value="Submit" class="myAlertForm" required>
+</form>
+<%
     }
 %>
 </body>
